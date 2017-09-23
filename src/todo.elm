@@ -68,10 +68,10 @@ view model =
         [ h1 [] [ text "todo" ]
         , input [ type_ "text", placeholder "todo", onInput Default ] []
         , button [ onClick Add ] [ text "add" ]
-        , div [] <| List.map renderItem model.todos
+        , ul [] <| List.map renderItem model.todos
         ]
 
 
 renderItem : Todo -> Html Msg
 renderItem todo =
-    div [] [ text todo.text ]
+    li [] [ text todo.text ]
